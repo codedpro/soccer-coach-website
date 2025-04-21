@@ -74,13 +74,16 @@ export default function About() {
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
-            className="relative h-[500px] rounded-2xl overflow-hidden"
+            className="relative aspect-[3/4] w-full max-w-[500px] mx-auto rounded-2xl overflow-hidden"
           >
             <Image
               src="/coach-profile.jpg"
               alt="Professional Soccer Coach"
               fill
-              className="object-cover"
+              sizes="(max-width: 768px) 100vw, 50vw"
+              priority
+              className="object-cover object-[center_top]"
+              quality={100}
             />
           </motion.div>
 
