@@ -11,12 +11,17 @@ import Footer from '@/components/layout/Footer';
 import Image from 'next/image';
 
 export default function Home() {
+  const openBookingModal = () => {
+    const event = new CustomEvent('openBookingModal');
+    window.dispatchEvent(event);
+  };
+
   return (
     <main className="min-h-screen">
       <Navigation />
       
       {/* Hero Section */}
-      <section className="relative h-screen flex items-center justify-center overflow-hidden">
+      <section id="home" className="relative h-screen flex items-center justify-center overflow-hidden">
         {/* Background Image */}
         <div className="absolute inset-0 z-0">
           <Image
@@ -48,12 +53,12 @@ export default function Home() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.4, duration: 0.8 }}
             >
-              <a
-                href="/book"
+              <button
+                onClick={openBookingModal}
                 className="inline-block bg-blue-600 hover:bg-blue-700 text-white font-semibold px-8 py-4 rounded-lg text-lg transition-colors duration-200"
               >
                 Book Your Session
-              </a>
+              </button>
             </motion.div>
           </motion.div>
         </div>
@@ -82,19 +87,29 @@ export default function Home() {
       </section>
 
       {/* Services Section */}
-      <Services />
+      <section id="services">
+        <Services />
+      </section>
 
       {/* About Section */}
-      <About />
+      <section id="about">
+        <About />
+      </section>
 
       {/* Testimonials Section */}
-      <Testimonials />
+      <section id="testimonials">
+        <Testimonials />
+      </section>
 
       {/* Contact Section */}
-      <Contact />
+      <section id="contact">
+        <Contact />
+      </section>
 
       {/* Booking Section */}
-      <Booking />
+      <section id="booking">
+        <Booking />
+      </section>
 
       <Footer />
     </main>
