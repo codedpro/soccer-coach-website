@@ -170,17 +170,17 @@ export default function Navigation() {
       >
         <div className="fixed inset-0 bg-black/30" aria-hidden="true" />
         <div className="fixed inset-0 flex items-center justify-center p-4">
-          <Dialog.Panel className="mx-auto max-w-2xl w-full rounded-2xl bg-white shadow-2xl overflow-hidden">
-            <div className="bg-gradient-to-r from-blue-600 to-blue-800 p-6">
-              <Dialog.Title className="text-2xl font-bold text-white">
+          <Dialog.Panel className="mx-auto w-full max-w-2xl rounded-2xl bg-white shadow-2xl overflow-y-auto max-h-[90vh]">
+            <div className="bg-gradient-to-r from-blue-600 to-blue-800 p-4 sm:p-6 sticky top-0 z-10">
+              <Dialog.Title className="text-xl sm:text-2xl font-bold text-white">
                 Book Your Session
               </Dialog.Title>
-              <p className="mt-2 text-blue-100">
+              <p className="mt-2 text-sm sm:text-base text-blue-100">
                 Fill out the form below to schedule your personalized training session
               </p>
             </div>
-            <form className="p-8 space-y-6">
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <form className="p-4 sm:p-8 space-y-4 sm:space-y-6">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6">
                 <div>
                   <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-1">
                     Name
@@ -188,7 +188,7 @@ export default function Navigation() {
                   <input
                     type="text"
                     id="name"
-                    className="w-full rounded-lg border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500 text-lg py-2 px-4"
+                    className="w-full rounded-lg border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500 text-base sm:text-lg py-2 px-4"
                     placeholder="Your full name"
                   />
                 </div>
@@ -199,13 +199,13 @@ export default function Navigation() {
                   <input
                     type="email"
                     id="email"
-                    className="w-full rounded-lg border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500 text-lg py-2 px-4"
+                    className="w-full rounded-lg border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500 text-base sm:text-lg py-2 px-4"
                     placeholder="your.email@example.com"
                   />
                 </div>
               </div>
 
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6">
                 <div>
                   <label htmlFor="phone" className="block text-sm font-medium text-gray-700 mb-1">
                     Phone Number
@@ -213,7 +213,7 @@ export default function Navigation() {
                   <input
                     type="tel"
                     id="phone"
-                    className="w-full rounded-lg border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500 text-lg py-2 px-4"
+                    className="w-full rounded-lg border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500 text-base sm:text-lg py-2 px-4"
                     placeholder="(123) 456-7890"
                   />
                 </div>
@@ -223,7 +223,7 @@ export default function Navigation() {
                   </label>
                   <select
                     id="sessionType"
-                    className="w-full rounded-lg border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500 text-lg py-2 px-4"
+                    className="w-full rounded-lg border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500 text-base sm:text-lg py-2 px-4"
                   >
                     <option value="">Select a session type</option>
                     <option value="personal">Personal Training</option>
@@ -234,7 +234,7 @@ export default function Navigation() {
                 </div>
               </div>
 
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6">
                 <div>
                   <label htmlFor="date" className="block text-sm font-medium text-gray-700 mb-1">
                     Preferred Date
@@ -242,7 +242,7 @@ export default function Navigation() {
                   <input
                     type="date"
                     id="date"
-                    className="w-full rounded-lg border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500 text-lg py-2 px-4"
+                    className="w-full rounded-lg border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500 text-base sm:text-lg py-2 px-4"
                   />
                 </div>
                 <div>
@@ -252,7 +252,7 @@ export default function Navigation() {
                   <input
                     type="time"
                     id="time"
-                    className="w-full rounded-lg border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500 text-lg py-2 px-4"
+                    className="w-full rounded-lg border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500 text-base sm:text-lg py-2 px-4"
                   />
                 </div>
               </div>
@@ -263,23 +263,23 @@ export default function Navigation() {
                 </label>
                 <textarea
                   id="message"
-                  rows={4}
-                  className="w-full rounded-lg border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500 text-lg py-2 px-4"
+                  rows={3}
+                  className="w-full rounded-lg border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500 text-base sm:text-lg py-2 px-4"
                   placeholder="Any specific goals or requirements?"
                 />
               </div>
 
-              <div className="mt-8 flex justify-end space-x-4">
+              <div className="mt-6 sm:mt-8 flex flex-col sm:flex-row justify-end space-y-3 sm:space-y-0 sm:space-x-4 sticky bottom-0 bg-white py-4">
                 <button
                   type="button"
                   onClick={() => setIsBookingModalOpen(false)}
-                  className="px-6 py-3 text-lg font-medium text-gray-700 bg-gray-100 rounded-lg hover:bg-gray-200 transition-colors duration-200"
+                  className="w-full sm:w-auto px-6 py-3 text-base sm:text-lg font-medium text-gray-700 bg-gray-100 rounded-lg hover:bg-gray-200 transition-colors duration-200"
                 >
                   Cancel
                 </button>
                 <button
                   type="submit"
-                  className="px-6 py-3 text-lg font-medium text-white bg-blue-600 rounded-lg hover:bg-blue-700 transition-colors duration-200 shadow-lg hover:shadow-xl"
+                  className="w-full sm:w-auto px-6 py-3 text-base sm:text-lg font-medium text-white bg-blue-600 rounded-lg hover:bg-blue-700 transition-colors duration-200 shadow-lg hover:shadow-xl"
                 >
                   Book Now
                 </button>
